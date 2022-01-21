@@ -6,8 +6,8 @@
         text="Say Hello"
         press=".onShowHello"/>
     <Input
-        value="{/recipient/name}"
-        description="Hello {/recipient/name}"
+        value="{modelAlias1>/recipient/name}"
+        description="Hello {modelAlias1>/recipient/name}"
         valueLiveUpdate="true"
         width="60%"/>
 </mvcAlias:View>

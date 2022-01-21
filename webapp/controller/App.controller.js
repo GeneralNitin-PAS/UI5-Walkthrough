@@ -7,14 +7,27 @@ sap.ui.define([
 
     return Controller.extend("myNamespace.controller.App", {
         onInit: function() {
-            var oData = {
+            var oData1 = {
                 recipient : {
-                    name : "World"
+                    name : "Nitin"
                 }
             };
-            var oModel = new JSONModel(oData);
-            this.getView().setModel(oModel);
-            console.log(this.getView().getModel());
+
+            var oData2 = {
+                recipient : {
+                    name : "Kumar"
+                }
+            };
+
+            var oModel1 = new JSONModel(oData1);
+            this.getView().setModel(oModel1, "modelAlias1");
+
+            var oModel2 = new JSONModel(oData2);
+            this.getView().setModel(oModel2, "modelAlias2");
+
+            console.log(this.getView().getModel("modelAlias1"));
+            console.log(this.getView().getModel("modelAlias2"));
+
         },
         onShowHello : function() {
             MessageToast.show("Hello World");
