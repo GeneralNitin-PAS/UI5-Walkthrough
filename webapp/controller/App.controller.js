@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel"
-], function (Controller, MessageToast, JSONModel){
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/resource/ResourceModel"
+], function (Controller, MessageToast, JSONModel, ResourceModel){
     "use strict";
 
     return Controller.extend("myNamespace.controller.App", {
@@ -13,24 +14,24 @@ sap.ui.define([
                 }
             };
 
-            var oData2 = {
-                recipient : {
-                    name : "Kumar"
-                }
-            };
-
             var oModel1 = new JSONModel(oData1);
-            this.getView().setModel(oModel1, "modelAlias1");
+            this.getView().setModel(oModel1);
 
-            var oModel2 = new JSONModel(oData2);
-            this.getView().setModel(oModel2, "modelAlias2");
+            console.log(this.getView().getModel());
 
-            console.log(this.getView().getModel("modelAlias1"));
-            console.log(this.getView().getModel("modelAlias2"));
+            var i18nModel = new ResourceModel({
+                bundleName: "myNamespace.i18n.i18n"
+            });
+            this.getView().setModel(i18nModel, "i18n");
 
+            console.log(this.getView().getModel("i18n"));
         },
         onShowHello : function() {
-            MessageToast.show("Hello World");
+            var oBundle = this.getView().getModel("i18n").getResourceBundle();
+            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+            var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+
+            MessageToast.show(sMsg);
         }
     });
 });

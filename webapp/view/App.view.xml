@@ -3,11 +3,11 @@
     xmlns="sap.m"
     xmlns:mvcAlias="sap.ui.core.mvc">
     <Button
-        text="Say Hello"
+        text="{i18n>sayHelloButtonText}"
         press=".onShowHello"/>
     <Input
-        value="{modelAlias1>/recipient/name}"
-        description="Hello {modelAlias1>/recipient/name}"
+        value="{/recipient/name}"
+        description="Hello {/recipient/name}"
         valueLiveUpdate="true"
         width="60%"/>
 </mvcAlias:View>
