@@ -1,0 +1,5 @@
+<mvcAlias:View
+    xmlns="sap.m"
+    xmlns:mvcAlias="sap.ui.core.mvc">
+    <Text text="Hello World"/>
+</mvcAlias:View>

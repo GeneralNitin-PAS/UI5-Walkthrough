@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/m/Text"
-], function (Text) {
+    "sap/ui/core/mvc/XMLView"
+], function (XMLView) {
     "use strict";
 
-    new Text({
-        text: "Hello World"
-    }).placeAt("content");
-    // alert("UI5 is ready");
+    XMLView.create({
+        viewName: "myNamespace.view.App"
+    }).then(function(oView){
+        oView.placeAt("content");
+    });
 });
