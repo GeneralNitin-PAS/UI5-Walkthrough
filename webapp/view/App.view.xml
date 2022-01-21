@@ -1,5 +1,8 @@
 <mvcAlias:View
+    controllerName="myNamespace.controller.App"
     xmlns="sap.m"
     xmlns:mvcAlias="sap.ui.core.mvc">
-    <Text text="Hello World"/>
+    <Button
+        text="Say Hello"
+        press=".onShowHello"/>
 </mvcAlias:View>
