@@ -1,13 +1,26 @@
 <mvcAlias:View
     controllerName="myNamespace.controller.App"
     xmlns="sap.m"
-    xmlns:mvcAlias="sap.ui.core.mvc">
-    <Button
-        text="{i18n>sayHelloButtonText}"
-        press=".onShowHello"/>
-    <Input
-        value="{/recipient/name}"
-        description="Hello {/recipient/name}"
-        valueLiveUpdate="true"
-        width="60%"/>
+    xmlns:mvcAlias="sap.ui.core.mvc"
+    displayBlock="true">
+    <App>
+        <pages>
+            <Page title="{i18n>homePageTitle}">
+                <content>
+                    <Panel headerText="{i18n>helloPanelTitle}">
+                        <content>
+                            <Button
+                                text="{i18n>sayHelloButtonText}"
+                                press=".onShowHello"/>
+                            <Input
+                                value="{/recipient/name}"
+                                description="Hello {/recipient/name}"
+                                valueLiveUpdate="true"
+                                width="60%"/>
+                        </content>
+                    </Panel>
+                </content>
+            </Page>
+        </pages>
+    </App>
 </mvcAlias:View>
