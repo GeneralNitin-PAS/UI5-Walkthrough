@@ -3,11 +3,11 @@ sap.ui.define([
 ], function (ComponentContainer) {
     "use strict";
 
-    new ComponentContainer({
-        name: "myNamespace",
-        settings: {
-            id: "walkthrough"
-        },
-        async: true
-    }).placeAt("content");
+    // new ComponentContainer({
+    //     name: "myNamespace",
+    //     settings: {
+    //         id: "walkthrough"
+    //     },
+    //     async: true
+    // }).placeAt("content");
 });
