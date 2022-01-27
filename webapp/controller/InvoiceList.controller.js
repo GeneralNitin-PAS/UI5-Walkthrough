@@ -26,8 +26,8 @@ sap.ui.define([
 
 			// filter binding
 			var oList = this.byId("invoiceList");
-			var oBinding = oList.getBinding("items");
-			oBinding.filter(aFilter);
+			var items = oList.getBinding("items");
+			items.filter(aFilter);
 		}
 	});
 });
