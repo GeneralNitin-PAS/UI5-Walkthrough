@@ -4,15 +4,7 @@
     xmlns:mvcAlias="sap.ui.core.mvc"
     displayBlock="true">
     <Shell>
-        <App class="myAppDemoWT">
-            <pages>
-                <Page title="{i18n>homePageTitle}">
-                    <content>
-                        <mvcAlias:XMLView viewName="myNamespace.view.HelloPanel"/>
-                        <mvcAlias:XMLView viewName="myNamespace.view.InvoiceList"/>
-                    </content>
-                </Page>
-            </pages>
+        <App class="myAppDemoWT" id="appId">
         </App>
     </Shell>
 </mvcAlias:View>
