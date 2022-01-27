@@ -6,7 +6,12 @@
         id="invoiceList"
         class="sapUiResponsiveMargin"
         width="auto"
-        items="{invoice>/MyJSONArray}">
+        items="{
+            path: 'invoice>/MyJSONArray',
+            sorter: {
+                path : 'ProductName'
+            }
+        }">
         <headerToolbar>
             <Toolbar>
                 <Title text="{i18n>appTitle}"/>
