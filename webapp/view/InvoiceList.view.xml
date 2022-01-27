@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName=""
+	controllerName="myNamespace.controller.InvoiceList"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
     <List
@@ -9,7 +9,15 @@
         items="{invoice>/MyJSONArray}">
         <items>
             <ObjectListItem
-                title="{invoice>Quantity} x {invoice>ProductName}"/>
+                title="{invoice>Quantity} x {invoice>ProductName}"
+                number="{
+                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: false
+                    }
+                }"
+                numberUnit="{view>/currency}"/>
         </items>
     </List>
 </mvc:View>
