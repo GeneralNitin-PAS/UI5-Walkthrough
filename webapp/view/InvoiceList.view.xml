@@ -3,10 +3,17 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
     <List
-        headerText="{i18n>invoiceListTitle}"
+        id="invoiceList"
         class="sapUiResponsiveMargin"
         width="auto"
         items="{invoice>/MyJSONArray}">
+        <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>appTitle}"/>
+                <ToolbarSpacer/>
+                <SearchField width="50%" search=".onFilterInvoices"/>
+            </Toolbar>
+        </headerToolbar>
         <items>
             <ObjectListItem
                 title="{invoice>Quantity} x {invoice>ProductName}"
