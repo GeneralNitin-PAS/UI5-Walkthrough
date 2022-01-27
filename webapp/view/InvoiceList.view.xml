@@ -9,7 +9,8 @@
         items="{
             path: 'invoice>/MyJSONArray',
             sorter: {
-                path : 'ProductName'
+                path : 'ShipperName',
+                group: true
             }
         }">
         <headerToolbar>
