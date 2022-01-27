@@ -1,57 +1,65 @@
 {
-    "_version": "1.12.0",
-    "sap.app": {
-      "id": "myNamespace",
-      "type": "application",
-      "i18n": "i18n/i18n.properties",
-      "title": "{{appTitle}}",
-      "description": "{{appDescription}}",
-      "applicationVersion": {
-        "version": "1.0.0"
-      }
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "myNamespace",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
     },
-    "sap.ui": {
-      "technology": "UI5",
-      "deviceTypes": {
-          "desktop": true,
-          "tablet": true,
-          "phone": true
-      }
-    },
-    "sap.ui5": {
-      "rootView": {
-          "viewName": "myNamespace.view.App",
-          "type": "XML",
-          "id": "app",
-          "async": true
-      },
-      "dependencies": {
-        "minUI5Version": "1.93",
-        "libs": {
-          "sap.ui.core": {},
-          "sap.m": {}
+    "dataSources": {
+      "invoiceRemote": {
+        "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
         }
-      },
-      "models": {
-        "i18n": {
-          "type": "sap.ui.model.resource.ResourceModel",
-          "settings": {
-            "bundleName": "myNamespace.i18n.i18n",
-            "supportedLocales": [""],
-            "fallbackLocale": ""
-          }
-        },
-        "invoice": {
-          "type": "sap.ui.model.json.JSONModel",
-          "uri": "Invoices.json"
-          }
-      },
-      "resources": {
-        "css": [
-          {
-            "uri": "css/style.css"
-          }
-        ]
       }
     }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "myNamespace.view.App",
+      "type": "XML",
+      "id": "app",
+      "async": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.93",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "myNamespace.i18n.i18n",
+          "supportedLocales": [""],
+          "fallbackLocale": ""
+        }
+      },
+      "invoice": {
+        "dataSource": "invoiceRemote"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
   }
+}

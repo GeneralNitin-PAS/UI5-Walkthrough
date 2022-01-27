@@ -7,7 +7,7 @@
         class="sapUiResponsiveMargin"
         width="auto"
         items="{
-            path: 'invoice>/MyJSONArray',
+            path: 'invoice>/Invoices',
             sorter: {
                 path : 'ShipperName',
                 group: true
