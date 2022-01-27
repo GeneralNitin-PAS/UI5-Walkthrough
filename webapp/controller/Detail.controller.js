@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/routing/History"
+], function (Controller, History) {
     "use strict";
 
     return Controller.extend("myNamespace.controller.Detail", {
@@ -14,6 +15,17 @@ sap.ui.define([
                 model: "invoice"
             });
             console.log(window.decodeURIComponent(oEvent.getParameter("arguments").invoicePath));
+        },
+        onNavBack: function() {
+            var oHistory = History.getInstance();
+            var sPreviousHash = oHistory.getPreviousHash();
+
+            if(sPreviousHash !== undefined) {
+                window.history.go(-1);
+            } else {
+                var oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("overviewName", {}, true);
+            }
         }
     });
 });
