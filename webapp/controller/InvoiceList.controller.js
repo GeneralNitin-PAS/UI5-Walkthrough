@@ -30,8 +30,12 @@ sap.ui.define([
 			items.filter(aFilter);
 		}, 
 		onPress: function (oEvent) {
+			var oItem = oEvent.getSource();
 			var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("detailName"); // /routes[i]/name
+			oRouter.navTo("detailName", {
+				invoicePath: window.encodeURIComponent(oItem.getBindingContext("invoice").getPath().substr(1))
+			}); // /routes[i]/name
+			console.log(window.encodeURIComponent(oItem.getBindingContext("invoice").getPath()));
 		}
 	});
 });

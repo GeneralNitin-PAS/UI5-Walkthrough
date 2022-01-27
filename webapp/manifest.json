@@ -76,7 +76,7 @@
           "target": "overviewTarget"
         },
         {
-          "pattern": "detailSearchBar",
+          "pattern": "detailSearchBar/{invoicePath}",
           "name": "detailName",
           "target": "detailTarget"
         }
